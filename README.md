@@ -1,72 +1,75 @@
+[update-readmes]   Mode: rewrite — migrating to template structure...
 # linux.distro.builder.4
 
-version 4 kernel of linux distro
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/linux.distro.builder.4)
 
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
+## Architecture
 
-Boot Process Overview: ISOLINUX, vmlinuz and initrd
-This project is designed as an educational Linux builder, allowing users to observe, experiment and understand how a Linux system boots and how a distribution is constructed.
-This section explains the role of ISOLINUX, vmlinuz, initrd.gz and linuxrd, which are fundamental components of the boot process.
-ISOLINUX
-ISOLINUX is a bootloader used mainly for bootable ISO images (CD/DVD/USB).
-It is part of the SYSLINUX bootloader family.
-ISOLINUX is responsible for:
-Starting the boot process
-Presenting a boot menu (if configured)
-Loading the Linux kernel and the initial RAM disk into memory
-ISOLINUX does not run Linux itself.
-Its only job is to prepare the system and pass control to the Linux kernel.
-Typical ISOLINUX configuration files:
-isolinux.cfg
-menu.cfg
-These files define:
-Which kernel to boot
-Which initrd to load
-Kernel parameters (boot options)
-vmlinuz (Linux Kernel)
-vmlinuz is the compressed Linux kernel.
-The kernel is the core of the operating system and is responsible for:
-Hardware detection
-CPU and memory management
-Device drivers
-Starting the first user-space process
-When ISOLINUX loads vmlinuz, the kernel:
-Decompresses itself into memory
-Initializes hardware
-Looks for an initial root filesystem (initrd / initramfs)
-Without a kernel, Linux cannot exist.
-initrd.gz / linuxrd (Initial RAM Disk)
-initrd.gz (sometimes named linuxrd) is a compressed temporary root filesystem loaded into RAM.
-Its purpose is to:
-Prepare the system before the real root filesystem is mounted
-Load necessary kernel modules (storage, filesystem, USB, etc.)
-Locate and mount the real system image
-Hand over control to the main system
-The initrd usually contains:
-A minimal filesystem
-BusyBox or similar tools
-Boot scripts (init)
-Mount logic and hardware detection
-After its job is done, the system switches from the initrd to the real root filesystem.
-Boot Flow Summary
-The boot process works in this order:
-BIOS / UEFI starts the bootloader
-ISOLINUX loads:
-vmlinuz (Linux kernel)
-initrd.gz or linuxrd
-Linux kernel starts and initializes hardware
-initrd runs early boot scripts
-The real Linux system is mounted and started
-This separation allows experimentation, modular design and educational exploration.
-Educational Purpose
-By separating:
-Bootloader
-Kernel
-Initial RAM filesystem
-System and data images
-This builder encourages users to:
-Observe how Linux starts
-Modify and experiment safely
-Create their own Linux distributions
-Learn Linux internals through practice
-Linux is not a black box — it is a system meant to be studied.
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
+
+## Install
+
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
+
+```bash
+git clone https://github.com/Interested-Deving-1896/linux.distro.builder.4.git
+cd linux.distro.builder.4
+```
+
+## Usage
+
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/linux.distro.builder.4`](https://github.com/Interested-Deving-1896/linux.distro.builder.4) and mirrored through:
+
+```
+Interested-Deving-1896/linux.distro.builder.4  ──►  OpenOS-Project-OSP/linux.distro.builder.4  ──►  OpenOS-Project-Ecosystem-OOC/linux.distro.builder.4
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+[GPL-3.0](https://github.com/Interested-Deving-1896/linux.distro.builder.4/blob/main/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
